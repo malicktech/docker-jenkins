@@ -1,1 +1,16 @@
 # Add any directories, files, or patterns you don't want to be tracked by version control
+
+
+# Docker project generated files to ignore
+
+*.exe
+*.exe~
+*.orig
+*.test
+.*.swp
+.DS_Store
+.vagrant
+
+# a .bashrc may be added to customize the build environment
+.bashrc
+.editorconfig

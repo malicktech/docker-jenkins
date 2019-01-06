@@ -1,22 +1,14 @@
-# https://docs.docker.com/get-started/part2/#dockerfile
-
-# Use an official Python runtime as a base image
-FROM python:2.7-slim
-
-# Set the working directory to /app
-WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-ADD . /app
-
-# Install any needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
-
-# Make port 80 available to the world outside this container
-EXPOSE 80
-
-# Define environment variable
-ENV NAME World
-
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+# from jenkinsci/jenkins:lts
+FROM jenkins/jenkins:lts
+ 
+USER root
+RUN apt-get update -qq \
+    && apt-get install -qqy apt-transport-https ca-certificates curl gnupg2 software-properties-common
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+RUN apt-get update  -qq \
+    && apt-get install docker-ce=18.06.1~ce~3-0~debian -y
+RUN usermod -aG docker jenkins

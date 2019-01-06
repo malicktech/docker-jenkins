@@ -1,27 +1,29 @@
+# Docker image for jenkins with support of docker image built
 
+https://hub.docker.com/r/jenkins/jenkins/
+https://github.com/rancher/jenkins-rancher
 
-https://www.docker.com/sites/default/files/UseCase/RA_CI%20with%20Docker_08.25.2015.pdf
-https://www.docker.com/use-cases/cicd
+# link
+https://medium.com/@manav503/how-to-build-docker-images-inside-a-jenkins-container-d59944102f30 
+https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci
 
+# docker file - install docker
+docker version musth match docker installed in host
+https://docs.docker.com/install/linux/docker-ce/debian/#install-docker-ce
 
-jenkins git plugin
-https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin
+# Build the image with below command
 
+    docker build -t snecommerce/jenkins-docker:latest .
 
+# login & push
+    docker login
+    docker push snecommerce/jenkins-docker
 
-* Install Bitbucket Plugin at your Jenkins
-https://wiki.jenkins-ci.org/display/JENKINS/BitBucket+Plugin
+# TODO 
+update to officiel https://hub.docker.com/r/jenkins/jenkins/
 
-* add webhook to bitbucket repo
-https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html
+https://github.com/rancher/jenkins-master
 
-http://vps365425.ovh.net:8080/bitbucket-hook/
-http://citizendiop:mySNEjenkins123@vps365425.ovh.net:8080/bitbucket-hook/
+https://rancher.com/drone-vs-jenkins/
 
-
-* Configure your Jenkins project as follows:
-under "build trigger" enable "Build when a change is pushed to BitBucket"
-under Source Code Management select GIT; enter your credentials and define Branches to build (like **feature/*)
-
-* 
-By this way we have three build projects :  one for all features, one for develop and one for release branch.
+https://rancher.com/docker-based-build-pipelines-part-1-continuous-integration-and-testing/

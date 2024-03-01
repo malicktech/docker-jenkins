@@ -1,0 +1,44 @@
+repo_name: malicktech/docker-jenkins
+report_id: c76f2e183194db48a74b43b6335fb636
+version: 0.1
+repo_type: Public
+timestamp: '2024-03-01T22:43:22+00:00'
+requested_by: malicktech
+provider: github
+branch: master
+detected_tools_count: 3
+tools:
+- name: Docker
+  description: Enterprise Container Platform for High-Velocity Innovation.
+  website_url: https://www.docker.com/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Virtual Machine Platforms & Containers
+  image_url: https://img.stackshare.io/service/586/n4u37v9t_400x400.png
+  detection_source_url: https://github.com/malicktech/docker-jenkins
+  detection_source: Repo Metadata
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/malicktech/docker-jenkins
+  detection_source: Repo Metadata
+- name: Jenkins
+  description: An extendable open source continuous integration server
+  website_url: http://jenkins-ci.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Continuous Integration
+  image_url: https://img.stackshare.io/service/670/jenkins.png
+  detection_source_url: https://github.com/malicktech/docker-jenkins/blob/master/RANCHER/docker-compose.yml
+  detection_source: RANCHER/docker-compose.yml
+  last_updated_by: Malick DIOP
+  last_updated_on: 2019-01-06 21:26:55.000000000 Z
